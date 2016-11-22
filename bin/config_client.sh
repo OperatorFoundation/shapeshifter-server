@@ -5,6 +5,7 @@ bin/fetch.sh $1 server.crt
 bin/fetch.sh $1 ta.key
 
 cp etc/template.ovpn DO.tblk/DO.ovpn
-sed -i -e 's/my-server/$1/g' DO.tblk/DO.ovpn
+sed -i -e "s/my-server/$1/g" DO.tblk/DO.ovpn
+rm DO.tblk/DO.ovpn-e
 
 open DO.tblk
