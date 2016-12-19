@@ -8,8 +8,9 @@
 3. in command line: navigate to your shapeshifter-server directory.
 4. in command line: "ssh-keygen -t ecdsa" to generate your ssh keys (use default filename (hit enter), no pass phrase (hit enter twice))
 
-# Start your OpenVPN server on Digital Ocean (Make sure you are in your shapeshifter-server directory)
-1. in command line: "source ./vars"
+# Start your OpenVPN server on Digital Ocean
+1. in command line: Make sure you are in your shapeshifter-server directory -> "cd path_to_shapeshifter-server_directory"
+2. in command line: "source ./vars"
 2. in command line: "terraform apply"
 
 # Stop your server
