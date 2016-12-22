@@ -4,6 +4,7 @@ variable "do_token" {}
 variable "pubkey" {}
 variable "privkey" {}
 variable "ssh_fingerprint" {}
+variable "config_dir" {}
 
 # Configure the DigitalOcean Provider
 provider "digitalocean" {
@@ -38,6 +39,15 @@ resource "digitalocean_droplet" "OpenVPN" {
     script = "bin/install_openvpn.sh"
   }
 
+  provisioner "remote-exec" {
+    script = "bin/install_shapeshifter-dispatcher.sh"
+  }
+
+  provisioner "file" {
+    source = "etc/dispatcher"
+    destination = "/etc/init.d/dispatcher"
+  }
+
   provisioner "file" {
     source = "etc/server.conf"
     destination = "/etc/openvpn/server.conf"
@@ -45,6 +55,10 @@ resource "digitalocean_droplet" "OpenVPN" {
 
   provisioner "remote-exec" {
     script = "bin/start_openvpn.sh"
+  }
+
+  provisioner "remote-exec" {
+    script = "bin/start_shapeshifter-dispatcher.sh"
   }
 
   provisioner "file" {
@@ -63,6 +77,6 @@ resource "digitalocean_droplet" "OpenVPN" {
   }
 
   provisioner "local-exec" {
-    command = "bin/config_client.sh ${digitalocean_droplet.OpenVPN.ipv4_address}"
+    command = "bin/config_client.sh ${digitalocean_droplet.OpenVPN.ipv4_address} ${var.config_dir}"
   }
 }
