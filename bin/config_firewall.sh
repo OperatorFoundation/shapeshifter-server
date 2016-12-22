@@ -11,3 +11,4 @@ rpl "DEFAULT_FORWARD_POLICY=\"DROP\"" "DEFAULT_FORWARD_POLICY=\"ACCEPT\"" /etc/d
 
 #ufw allow 1194/udp
 ufw allow 1194/tcp
+ufw allow 1234/tcp
