@@ -77,6 +77,6 @@ resource "digitalocean_droplet" "OpenVPN" {
   }
 
   provisioner "local-exec" {
-    command = "bin/config_client.sh ${digitalocean_droplet.OpenVPN.ipv4_address} ${var.config_dir}"
+    command = "bin/config_client.sh ${digitalocean_droplet.OpenVPN.ipv4_address} \"${var.config_dir}\""
   }
 }
