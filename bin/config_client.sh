@@ -8,6 +8,6 @@ cp etc/template.ovpn "$2/DO.ovpn"
 sed -i -e "s/my-server/$1/g" "$2/DO.ovpn"
 rm "$2/DO.ovpn-e"
 
-echo -n "$1" > "$2/serverIP"
+echo "$1\c" > "$2/serverIP"
 
 #open "$2"
