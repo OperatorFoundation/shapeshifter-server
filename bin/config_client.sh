@@ -5,8 +5,8 @@ bin/fetch.sh $1 server.crt "$2"
 bin/fetch.sh $1 ta.key "$2"
 
 cp etc/template.ovpn "$2/DO.ovpn"
-sed -i -e "s/my-server/$1/g" "$2/DO.ovpn"
-rm "$2/DO.ovpn-e"
+#sed -i -e "s/my-server/$1/g" "$2/DO.ovpn"
+#rm "$2/DO.ovpn-e"
 
 echo "$1\c" > "$2/serverIP"
 
