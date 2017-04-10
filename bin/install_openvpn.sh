@@ -1,6 +1,9 @@
 #!/bin/bash
 
 apt-get update -y
+sleep 5
+apt-get update -y
+sleep 5
 apt-get install -y openvpn openvpn-blacklist easy-rsa rpl
 
 make-cadir ca

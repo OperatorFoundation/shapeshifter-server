@@ -5,6 +5,6 @@ echo ">>>Start the dispatcher"
 /etc/init.d/dispatcher start
 
 echo ">>> Sleeping"
-sleep 5
+sleep 30
 
 echo "<<<<End of start_shapeshifter-dispatcher.sh"
