@@ -3,6 +3,7 @@ bin/fetch.sh $1 client1.crt "$2"
 bin/fetch.sh $1 client1.key "$2"
 bin/fetch.sh $1 server.crt "$2"
 bin/fetch.sh $1 ta.key "$2"
+bin/fetch.sh $1 obfs4.json "$2"
 
 cp etc/template.ovpn "$2/DO.ovpn"
 #sed -i -e "s/my-server/$1/g" "$2/DO.ovpn"
