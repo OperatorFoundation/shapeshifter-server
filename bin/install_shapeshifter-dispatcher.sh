@@ -1,6 +1,6 @@
 #!/bin/bash
 
-apt-get install -y git golang curl
+apt-get install -y git golang curl supervisor
 
 mkdir ~/go
 export GOPATH=~/go
