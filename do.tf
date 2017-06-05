@@ -22,7 +22,6 @@ resource "digitalocean_droplet" "OpenVPN" {
   name = "OpenVPN-1"
   region = "nyc1"
   size = "512mb"
-  private_networking = true
   ssh_keys = [
     "${var.ssh_fingerprint}"
   ]
@@ -44,8 +43,8 @@ resource "digitalocean_droplet" "OpenVPN" {
   }
 
   provisioner "file" {
-    source = "etc/dispatcher"
-    destination = "/etc/init.d/dispatcher"
+    source = "etc/shapeshifter.conf"
+    destination = "/etc/supervisor/conf.d/shapeshifter.conf"
   }
 
   provisioner "file" {
